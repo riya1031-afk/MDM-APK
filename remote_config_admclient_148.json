@@ -1,0 +1,768 @@
+{
+  "conditions": [
+    {
+      "name": "UAT",
+      "expression": "app.id == '1:996505471740:android:d4e38bcf0508d5e0312579'",
+      "tagColor": "BROWN"
+    },
+    {
+      "name": "All",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['All'])",
+      "tagColor": "TEAL"
+    },
+    {
+      "name": "UG",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['UG'])",
+      "tagColor": "ORANGE"
+    },
+    {
+      "name": "TZ",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['TZ'])",
+      "tagColor": "BROWN"
+    },
+    {
+      "name": "ZM",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['ZM'])",
+      "tagColor": "BLUE"
+    },
+    {
+      "name": "NE",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['NE'])",
+      "tagColor": "ORANGE"
+    },
+    {
+      "name": "MW",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['MW'])",
+      "tagColor": "INDIGO"
+    },
+    {
+      "name": "TD",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['TD'])",
+      "tagColor": "PURPLE"
+    },
+    {
+      "name": "GA",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['GA'])",
+      "tagColor": "PINK"
+    },
+    {
+      "name": "KE",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['KE'])",
+      "tagColor": "DEEP_ORANGE"
+    },
+    {
+      "name": "NG",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['NG'])",
+      "tagColor": "LIME"
+    },
+    {
+      "name": "CG",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['CG'])",
+      "tagColor": "CYAN"
+    },
+    {
+      "name": "DRC",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['DRC'])",
+      "tagColor": "PINK"
+    },
+    {
+      "name": "RW",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['RW'])",
+      "tagColor": "TEAL"
+    },
+    {
+      "name": "SC",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['SC'])",
+      "tagColor": "DEEP_ORANGE"
+    },
+    {
+      "name": "MG",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['MG'])",
+      "tagColor": "BLUE"
+    },
+    {
+      "name": "UGUAT",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['UGUAT'])",
+      "tagColor": "ORANGE"
+    },
+    {
+      "name": "TZUAT",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['TZUAT'])",
+      "tagColor": "ORANGE"
+    },
+    {
+      "name": "ZMUAT",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['ZMUAT'])",
+      "tagColor": "INDIGO"
+    },
+    {
+      "name": "NEUAT",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['NEUAT'])",
+      "tagColor": "ORANGE"
+    },
+    {
+      "name": "MWUAT",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['MWUAT'])",
+      "tagColor": "PURPLE"
+    },
+    {
+      "name": "TDUAT",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['TDUAT'])",
+      "tagColor": "BROWN"
+    },
+    {
+      "name": "GAUAT",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['GAUAT'])",
+      "tagColor": "CYAN"
+    },
+    {
+      "name": "KEUAT",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['KEUAT'])",
+      "tagColor": "PINK"
+    },
+    {
+      "name": "NGUAT",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['NGUAT'])",
+      "tagColor": "DEEP_ORANGE"
+    },
+    {
+      "name": "CGUAT",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['CGUAT'])",
+      "tagColor": "BROWN"
+    },
+    {
+      "name": "DRCUAT",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['DRCUAT'])",
+      "tagColor": "BROWN"
+    },
+    {
+      "name": "RWUAT",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['RWUAT'])",
+      "tagColor": "INDIGO"
+    },
+    {
+      "name": "SCUAT",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['SCUAT'])",
+      "tagColor": "PURPLE"
+    },
+    {
+      "name": "MGUAT",
+      "expression": "app.userProperty['countryISO'].exactlyMatches(['MGUAT'])",
+      "tagColor": "PURPLE"
+    }
+  ],
+  "parameters": {
+    "sync_task_interval_in_mins": {
+      "defaultValue": {
+        "value": "15"
+      },
+      "description": "This time is in minutes. This should not be less than 15 minutes",
+      "valueType": "STRING"
+    },
+    "base_url": {
+      "defaultValue": {
+        "value": "https://bfe.airtelkenya.com"
+      },
+      "conditionalValues": {
+        "UAT": {
+          "value": "https://bfesit.airtelkenya.com"
+        },
+        "All": {
+          "value": "https://private-90058c-admclient.apiary-mock.com"
+        },
+        "UG": {
+          "value": "https://bfe.airtelkenya.com"
+        }
+      },
+      "valueType": "STRING"
+    },
+    "app_list_url": {
+      "defaultValue": {
+        "value": "/bfe/web/mdm/api/mdm/adm/apps"
+      },
+      "conditionalValues": {
+        "UAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=UG"
+        },
+        "All": {
+          "value": "/allapps"
+        },
+        "UG": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=UG"
+        },
+        "TZ": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=TZ"
+        },
+        "ZM": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=ZM"
+        },
+        "NE": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=NE"
+        },
+        "MW": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=MW"
+        },
+        "TD": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=TD"
+        },
+        "GA": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=GA"
+        },
+        "KE": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=KE"
+        },
+        "NG": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=NG"
+        },
+        "CG": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=CG"
+        },
+        "DRC": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=DRC"
+        },
+        "RW": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=RW"
+        },
+        "SC": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=SC"
+        },
+        "MG": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=MG"
+        },
+        "UGUAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=UGUAT"
+        },
+        "TZUAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=TZUAT"
+        },
+        "ZMUAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=ZMUAT"
+        },
+        "NEUAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=NEUAT"
+        },
+        "MWUAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=MWUAT"
+        },
+        "TDUAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=TDUAT"
+        },
+        "GAUAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=GAUAT"
+        },
+        "KEUAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=KEUAT"
+        },
+        "NGUAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=NGUAT"
+        },
+        "CGUAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=CGUAT"
+        },
+        "DRCUAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=DRCUAT"
+        },
+        "RWUAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=RWUAT"
+        },
+        "SCUAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=SCUAT"
+        },
+        "MGUAT": {
+          "value": "/bfe/web/mdm/api/mdm/adm/apps?opco=MGUAT"
+        }
+      },
+      "valueType": "STRING"
+    },
+    "data_url": {
+      "defaultValue": {
+        "value": ""
+      },
+      "conditionalValues": {
+        "UAT": {
+          "value": "/bfe/web/mss/api/mdm/sync/producer/v1/pushTopic"
+        },
+        "All": {
+          "value": "/syncData"
+        },
+        "UG": {
+          "value": ""
+        }
+      },
+      "valueType": "STRING"
+    },
+    "test_key": {
+      "defaultValue": {
+        "value": "Hello test value"
+      },
+      "valueType": "STRING"
+    },
+    "notif_title": {
+      "defaultValue": {
+        "value": "Airtel Device Manager"
+      },
+      "valueType": "STRING"
+    },
+    "notif_content": {
+      "defaultValue": {
+        "value": "Airtel Device Manager is currently running"
+      },
+      "valueType": "STRING"
+    },
+    "notif_body_allow_perms": {
+      "defaultValue": {
+        "value": "Please allow permissions"
+      },
+      "valueType": "STRING"
+    },
+    "notif_install_btn_label": {
+      "defaultValue": {
+        "value": "Install"
+      },
+      "valueType": "STRING"
+    },
+    "notif_intall_title": {
+      "defaultValue": {
+        "value": "Airtel App Installer"
+      },
+      "valueType": "STRING"
+    },
+    "notif_install_body": {
+      "defaultValue": {
+        "value": "Downloading.."
+      },
+      "valueType": "STRING"
+    },
+    "notif_download_complete_body": {
+      "defaultValue": {
+        "value": "Download Complete"
+      },
+      "valueType": "STRING"
+    },
+    "notif_download_file_corrupted_body": {
+      "defaultValue": {
+        "value": "File is corrupted. Please download again"
+      },
+      "valueType": "STRING"
+    },
+    "app_install_btn_label": {
+      "defaultValue": {
+        "value": "Install"
+      },
+      "valueType": "STRING"
+    },
+    "app_open_btn_label": {
+      "defaultValue": {
+        "value": "Open"
+      },
+      "valueType": "STRING"
+    },
+    "app_update_btn_label": {
+      "defaultValue": {
+        "value": "Update"
+      },
+      "valueType": "STRING"
+    },
+    "no_connectivity_msg": {
+      "defaultValue": {
+        "value": "You are not connected to internet. Please connect to the internet and try again"
+      },
+      "valueType": "STRING"
+    },
+    "default_error_message": {
+      "defaultValue": {
+        "value": "Something seems to have gone wrong, please try again."
+      },
+      "valueType": "STRING"
+    },
+    "server_error_msg": {
+      "defaultValue": {
+        "value": "Something went wrong at server"
+      },
+      "valueType": "STRING"
+    },
+    "offered_version_text": {
+      "defaultValue": {
+        "value": "Offered Version"
+      },
+      "valueType": "STRING"
+    },
+    "app_download_install_btn_label": {
+      "defaultValue": {
+        "value": "Download & Install"
+      },
+      "valueType": "STRING"
+    },
+    "installed_version_higher_than_offered_msg": {
+      "defaultValue": {
+        "value": "New version is available to update. Please uninstall first for updating."
+      },
+      "valueType": "STRING"
+    },
+    "app_uninstall_btn_label": {
+      "defaultValue": {
+        "value": "Uninstall"
+      },
+      "valueType": "STRING"
+    },
+    "installed_version_text": {
+      "defaultValue": {
+        "value": "Installed Version "
+      },
+      "valueType": "STRING"
+    },
+    "pre_downloaded_file_install_msg": {
+      "defaultValue": {
+        "value": "File is already downloaded. Please install"
+      },
+      "valueType": "STRING"
+    },
+    "download_and_install_msg": {
+      "defaultValue": {
+        "value": "Please download and install the app"
+      },
+      "valueType": "STRING"
+    },
+    "pre_downloaded_file_update_msg": {
+      "defaultValue": {
+        "value": "File is already downloaded. Please update"
+      },
+      "valueType": "STRING"
+    },
+    "download_and_update_msg": {
+      "defaultValue": {
+        "value": "A new update is available. Please download and update."
+      },
+      "valueType": "STRING"
+    },
+    "s_c_p_l": {
+      "defaultValue": {
+        "value": "[\"com.airtelafrica.tanzania\"]"
+      },
+      "conditionalValues": {
+        "All": {
+          "value": "[\"com.androidwave.recyclerviewpagination\"]"
+        },
+        "UG": {
+          "value": "[\"com.airtel.kycug\"]"
+        },
+        "TZ": {
+          "value": "[\"com.airtelafrica.tanzania\"]"
+        },
+        "ZM": {
+          "value": "[\"com.airtelafrica.kyc\"]"
+        },
+        "MW": {
+          "value": "[\"com.airtelafrica.kyc\"]"
+        },
+        "TD": {
+          "value": "[\"com.airtel.kycchad\"]"
+        },
+        "GA": {
+          "value": "[\"com.airtelafrica.kyc\"]"
+        },
+        "KE": {
+          "value": "[\"com.airtel.kycug\"]"
+        },
+        "NG": {
+          "value": "[\"kycng.agile.com.kycng\"]"
+        },
+        "CG": {
+          "value": "[\"com.airtelafrica.kyc\"]"
+        },
+        "DRC": {
+          "value": "[\"com.airtel.drc\"]"
+        },
+        "RW": {
+          "value": "[\"com.airtel.agilelabafrica.kycrwanda\"]"
+        },
+        "SC": {
+          "value": "[\"com.airtel.seychelles\"]"
+        },
+        "MG": {
+          "value": "[\"com.airtel.kycmg\"]"
+        },
+        "UGUAT": {
+          "value": "[\"com.airtel.kycug\"]"
+        },
+        "TZUAT": {
+          "value": "[\"com.airtelafrica.tanzania\"]"
+        },
+        "MWUAT": {
+          "value": "[\"com.airtel.kycmalawi\"]"
+        }
+      },
+      "description": "Defines how many which apps should be installed to mark the installation complete",
+      "valueType": "STRING"
+    },
+    "c_a_r": {
+      "defaultValue": {
+        "value": "Complete setup requirement"
+      },
+      "description": "Message to be displayed when all setup requirements are not completed",
+      "valueType": "STRING"
+    },
+    "finish_text": {
+      "defaultValue": {
+        "value": "Finish"
+      },
+      "valueType": "STRING"
+    },
+    "notif_download_failed_error": {
+      "defaultValue": {
+        "value": "Download failed. Please try again"
+      },
+      "valueType": "STRING"
+    },
+    "header_service_id": {
+      "defaultValue": {
+        "value": "csteam_mdm_service_webctx"
+      },
+      "valueType": "STRING"
+    },
+    "header_api_version": {
+      "defaultValue": {
+        "value": "0.0.2"
+      },
+      "valueType": "STRING"
+    },
+    "app_list_empty_msg": {
+      "defaultValue": {
+        "value": "No apps exist"
+      },
+      "valueType": "STRING"
+    },
+    "app_installation_bypass_msg": {
+      "defaultValue": {
+        "value": "You've bypassed app installation process."
+      },
+      "valueType": "STRING"
+    },
+    "perm_usage_access_heading": {
+      "defaultValue": {
+        "value": "Allow Usage Access"
+      },
+      "valueType": "STRING"
+    },
+    "perm_usage_access_subheading": {
+      "defaultValue": {
+        "value": "We need \"Usage Access\" permission to provide app block/unblock facility. Enable \"ADMClient\" on the following screen."
+      },
+      "valueType": "STRING"
+    },
+    "perm_access_notification_heading": {
+      "defaultValue": {
+        "value": "Enable App Notifications"
+      },
+      "valueType": "STRING"
+    },
+    "perm_access_notification_subheading": {
+      "defaultValue": {
+        "value": "We need \"Notification Access\" permission to block notifications, instead unread notifications are displayed as badge on app icons in ADMClient home screen. Enable \"ADMClient\" on the following screen."
+      },
+      "valueType": "STRING"
+    },
+    "perm_install_from_unknown_source_heading": {
+      "defaultValue": {
+        "value": "Install from Unknown Sources"
+      },
+      "valueType": "STRING"
+    },
+    "perm_install_from_unknown_source_subheading": {
+      "defaultValue": {
+        "value": "This permission is required to enable installation of apk's pushed from ADMClient Enterprise Store. Please check/enable \"Unknown Sources\" option in the following screen."
+      },
+      "valueType": "STRING"
+    },
+    "perm_enable_overlay_heading": {
+      "defaultValue": {
+        "value": "Enable Overlay Permission"
+      },
+      "valueType": "STRING"
+    },
+    "perm_enable_overlay_subheading": {
+      "defaultValue": {
+        "value": "We required this permission for hiding the status, showing notification center and background running apps etc."
+      },
+      "valueType": "STRING"
+    },
+    "perm_write_system_setting_heading": {
+      "defaultValue": {
+        "value": "Enable Write System Settings"
+      },
+      "valueType": "STRING"
+    },
+    "perm_write_system_setting_subheading": {
+      "defaultValue": {
+        "value": "We will need this permission to change device brightness, device rotation, device screen timeout settings and create hotspot etc. Note: if you see that it is already enabled, just uncheck and recheck so that the permission will grant properly."
+      },
+      "valueType": "STRING"
+    },
+    "perm_read_phone_state_heading": {
+      "defaultValue": {
+        "value": "Read Phone State"
+      },
+      "valueType": "STRING"
+    },
+    "perm_read_phone_state_subheading": {
+      "defaultValue": {
+        "value": "Enable read phone state permission"
+      },
+      "valueType": "STRING"
+    },
+    "perm_allow_location_heading": {
+      "defaultValue": {
+        "value": "Allow Location permission"
+      },
+      "valueType": "STRING"
+    },
+    "perm_allow_location_subheading": {
+      "defaultValue": {
+        "value": "Enable location permission"
+      },
+      "valueType": "STRING"
+    },
+    "perm_turn_on_location_heading": {
+      "defaultValue": {
+        "value": "Turn on Location"
+      },
+      "valueType": "STRING"
+    },
+    "perm_turn_on_location_subheading": {
+      "defaultValue": {
+        "value": "Turn on device location"
+      },
+      "valueType": "STRING"
+    },
+    "perm_activate_device_admin_heading": {
+      "defaultValue": {
+        "value": "Activate device admin"
+      },
+      "valueType": "STRING"
+    },
+    "perm_activate_device_admin_subheading": {
+      "defaultValue": {
+        "value": "Make this app as device admin"
+      },
+      "valueType": "STRING"
+    },
+    "skip_btn_label": {
+      "defaultValue": {
+        "value": "Skip"
+      },
+      "valueType": "STRING"
+    },
+    "next_btn_label": {
+      "defaultValue": {
+        "value": "Next"
+      },
+      "valueType": "STRING"
+    },
+    "permission_screen_label": {
+      "defaultValue": {
+        "value": "Permissions"
+      },
+      "valueType": "STRING"
+    },
+    "setting_screen_label": {
+      "defaultValue": {
+        "value": "Configurations"
+      },
+      "valueType": "STRING"
+    },
+    "app_screen_label": {
+      "defaultValue": {
+        "value": "Applications"
+      },
+      "valueType": "STRING"
+    },
+    "setting_screen_imei1_label": {
+      "defaultValue": {
+        "value": "IMEI1"
+      },
+      "valueType": "STRING"
+    },
+    "setting_screen_imei2_label": {
+      "defaultValue": {
+        "value": "IMEI2"
+      },
+      "valueType": "STRING"
+    },
+    "setting_screen_brand_label": {
+      "defaultValue": {
+        "value": "Brand"
+      },
+      "valueType": "STRING"
+    },
+    "setting_screen_model_label": {
+      "defaultValue": {
+        "value": "Model"
+      },
+      "valueType": "STRING"
+    },
+    "setting_screen_opco_label": {
+      "defaultValue": {
+        "value": "Opco"
+      },
+      "valueType": "STRING"
+    },
+    "app_update_priority": {
+      "defaultValue": {
+        "value": "5"
+      },
+      "description": "0=For not showing update in app. Let user handle on play store.\n5=Hard Update\n1-4=Soft Update",
+      "valueType": "STRING"
+    },
+    "skipPermissionScreen": {
+      "defaultValue": {
+        "value": "true"
+      },
+      "valueType": "STRING"
+    },
+    "header_sync_api_key": {
+      "defaultValue": {
+        "value": "cfeef6f6-6461-4c52-a246-679ddae7fe66"
+      },
+      "valueType": "STRING"
+    },
+    "header_sync_service_id": {
+      "defaultValue": {
+        "value": "csteam_mdm_sync_service_webctx"
+      },
+      "valueType": "STRING"
+    },
+    "header_sync_api_version": {
+      "defaultValue": {
+        "value": "1.0.0"
+      },
+      "valueType": "STRING"
+    },
+    "is_show_error_logs": {
+      "defaultValue": {
+        "value": "true"
+      },
+      "valueType": "STRING"
+    },
+    "show_sync_data": {
+      "defaultValue": {
+        "value": "true"
+      },
+      "valueType": "STRING"
+    },
+    "enable_logs": {
+      "defaultValue": {
+        "value": "true"
+      },
+      "valueType": "STRING"
+    }
+  },
+  "version": {
+    "versionNumber": "148",
+    "updateTime": "2022-01-18T07:41:58.870104Z",
+    "updateUser": {
+      "email": "lavanya.khatri@africa.airtel.com"
+    },
+    "updateOrigin": "CONSOLE",
+    "updateType": "INCREMENTAL_UPDATE"
+  }
+}
